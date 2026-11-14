@@ -9,3 +9,10 @@ int sum(int n) {
     return n + sum(n - 1); // recursive case
 }
 
+int main(){
+    int n;
+    cout<<"Enter a number:";
+    cin>>n;
+    cout<<"Sum of "<<n<<" natural numbers is:"<<sum(n)<<endl;
+    return 0;
+}
