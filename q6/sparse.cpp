@@ -15,7 +15,7 @@ int main() {
             cin >> a[i][j];
 
 
-                for (int i = 0; i < rows; i++) {
+                 for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
             if (a[i][j] != 0) {
                 sparse[k][0] = i;
@@ -24,8 +24,14 @@ int main() {
                 k++;
             }
         }
-        
-            sparse[0][0] = rows;
+    }
+    sparse[0][0] = rows;
     sparse[0][1] = cols;
-    sparse[0][2] = k - 1;        // number of non-zero elements
+    sparse[0][2] = k - 1; 
+        cout << "\nSparse matrix (Row Col Value):" << endl;
+    for (int i = 0; i < k; i++)
+        cout << sparse[i][0] << "\t" << sparse[i][1] << "\t" << sparse[i][2] << endl;
+
+    return 0;
+       // number of non-zero elements
     }
