@@ -18,6 +18,7 @@ bool isFull() {
 bool isEmpty() {
     return front == -1;
 }
+
 void insertFront(int x) {
     if (isFull()) {
         cout << "Overflow: deque is full" << endl;
