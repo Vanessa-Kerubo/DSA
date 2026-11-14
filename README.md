@@ -1,7 +1,5 @@
 # CCS 2214 – Data Structures and Algorithms: Task 3
 
-Faculty of Computing and Information Technology
-Due: Sunday 15th November 2026
 
 ## Language used
 
