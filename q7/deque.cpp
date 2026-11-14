@@ -11,3 +11,24 @@ using namespace std;
 
 int deque[SIZE];
 int front = -1, rear = -1;
+bool isFull() {
+    return (front == 0 && rear == SIZE - 1) || (front == rear + 1);
+}
+
+bool isEmpty() {
+    return front == -1;
+}
+void insertFront(int x) {
+    if (isFull()) {
+        cout << "Overflow: deque is full" << endl;
+        return;
+    }
+    if (isEmpty())               // first element
+        front = rear = 0;
+    else if (front == 0)         // wrap around
+        front = SIZE - 1;
+    else
+        front--;
+    deque[front] = x;
+    cout << x << " inserted at front" << endl;
+}
