@@ -47,3 +47,16 @@ void insertRear(int x) {
     deque[rear] = x;
     cout << x << " inserted at rear" << endl;
 }
+void deleteFront() {
+    if (isEmpty()) {
+        cout << "Underflow: deque is empty" << endl;
+        return;
+    }
+    cout << deque[front] << " deleted from front" << endl;
+    if (front == rear)           // only one element
+        front = rear = -1;
+    else if (front == SIZE - 1)  // wrap around
+        front = 0;
+    else
+        front++;
+}
