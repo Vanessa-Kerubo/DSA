@@ -1,0 +1,7 @@
+//Write a program to implement sparse using arrays
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a[10][10], sparse[50][3];
+    int rows, cols, k = 1;
