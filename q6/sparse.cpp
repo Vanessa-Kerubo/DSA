@@ -13,4 +13,15 @@ int main() {
     for (int i = 0; i < rows; i++)
         for (int j = 0; j < cols; j++)
             cin >> a[i][j];
+
             
+                for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            if (a[i][j] != 0) {
+                sparse[k][0] = i;
+                sparse[k][1] = j;
+                sparse[k][2] = a[i][j];
+                k++;
+            }
+        }
+    }
