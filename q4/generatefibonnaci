@@ -1,0 +1,11 @@
+//Write a recursive program to generate the terms of a fibonnaci series upto N terms
+#include <iostream>
+using namespace std;
+#include <iostream>
+using namespace std;
+
+int fib(int n) {
+    if (n == 1) return 0;
+    if (n == 2) return 1;
+    return fib(n - 1) + fib(n - 2);
+}
