@@ -14,7 +14,7 @@ int main() {
         for (int j = 0; j < cols; j++)
             cin >> a[i][j];
 
-            
+
                 for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
             if (a[i][j] != 0) {
@@ -24,4 +24,8 @@ int main() {
                 k++;
             }
         }
+        
+            sparse[0][0] = rows;
+    sparse[0][1] = cols;
+    sparse[0][2] = k - 1;        // number of non-zero elements
     }
