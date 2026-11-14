@@ -4,97 +4,106 @@
 3. Delete from front
 4. Delete from rear
 */
-#include <iostream>
-using namespace std;
-
+#include <stdio.h>
 #define SIZE 5
 
 int deque[SIZE];
 int front = -1, rear = -1;
-bool isFull() {
+
+int isFull() {
     return (front == 0 && rear == SIZE - 1) || (front == rear + 1);
 }
 
-bool isEmpty() {
+int isEmpty() {
     return front == -1;
 }
 
+/* 1. Front insertion */
 void insertFront(int x) {
     if (isFull()) {
-        cout << "Overflow: deque is full" << endl;
+        printf("Overflow: deque is full\n");
         return;
     }
-    if (isEmpty())               // first element
+    if (isEmpty())               /* first element */
         front = rear = 0;
-    else if (front == 0)         // wrap around
+    else if (front == 0)         /* wrap around */
         front = SIZE - 1;
     else
         front--;
     deque[front] = x;
-    cout << x << " inserted at front" << endl;
+    printf("%d inserted at front\n", x);
 }
+
+/* 2. Rear insertion */
 void insertRear(int x) {
     if (isFull()) {
-        cout << "Overflow: deque is full" << endl;
+        printf("Overflow: deque is full\n");
         return;
     }
     if (isEmpty())
         front = rear = 0;
-    else if (rear == SIZE - 1)   // wrap around
+    else if (rear == SIZE - 1)   /* wrap around */
         rear = 0;
     else
         rear++;
     deque[rear] = x;
-    cout << x << " inserted at rear" << endl;
+    printf("%d inserted at rear\n", x);
 }
+
+/* 3. Front deletion */
 void deleteFront() {
     if (isEmpty()) {
-        cout << "Underflow: deque is empty" << endl;
+        printf("Underflow: deque is empty\n");
         return;
     }
-    cout << deque[front] << " deleted from front" << endl;
-    if (front == rear)           // only one element
+    printf("%d deleted from front\n", deque[front]);
+    if (front == rear)           /* only one element */
         front = rear = -1;
-    else if (front == SIZE - 1)  // wrap around
+    else if (front == SIZE - 1)  /* wrap around */
         front = 0;
     else
         front++;
 }
+
+/* 4. Rear deletion */
 void deleteRear() {
     if (isEmpty()) {
-        cout << "Underflow: deque is empty" << endl;
+        printf("Underflow: deque is empty\n");
         return;
     }
-    cout << deque[rear] << " deleted from rear" << endl;
-    if (front == rear)           // only one element
+    printf("%d deleted from rear\n", deque[rear]);
+    if (front == rear)           /* only one element */
         front = rear = -1;
-    else if (rear == 0)          // wrap around
+    else if (rear == 0)          /* wrap around */
         rear = SIZE - 1;
     else
         rear--;
 }
+
 void display() {
+    int i;
     if (isEmpty()) {
-        cout << "Deque is empty" << endl;
+        printf("Deque is empty\n");
         return;
     }
-    cout << "Deque: ";
-    int i = front;
-    while (true) {
-        cout << deque[i] << " ";
+    printf("Deque: ");
+    i = front;
+    while (1) {
+        printf("%d ", deque[i]);
         if (i == rear) break;
         i = (i + 1) % SIZE;
     }
-    cout << endl;
+    printf("\n");
 }
+
 int main() {
     insertRear(10);
     insertRear(20);
     insertFront(5);
     insertFront(1);
-    display();          // 1 5 10 20
+    display();          /* 1 5 10 20 */
     deleteFront();
     deleteRear();
-    display();          // 5 10
+    display();          /* 5 10 */
     return 0;
 }
