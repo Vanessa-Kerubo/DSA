@@ -30,3 +30,13 @@ void dequeue() {
     if (front > rear)       // queue became empty, reset
         front = rear = -1;
 }
+void display() {
+    if (front == -1) {
+        cout << "Queue is empty" << endl;
+        return;
+    }
+    cout << "Queue elements: ";
+    for (int i = front; i <= rear; i++)
+        cout << queue[i] << " ";
+    cout << endl;
+}
