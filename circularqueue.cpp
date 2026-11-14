@@ -30,3 +30,17 @@ void dequeue() {
     else
         front = (front + 1) % MAX;
 }
+void display() {
+    if (isEmpty()) {
+        cout << "Queue is empty" << endl;
+        return;
+    }
+    int i = front;
+    cout << "Queue: ";
+    while (true) {
+        cout << q[i] << " ";
+        if (i == rear) break;
+        i = (i + 1) % MAX;
+    }
+    cout << endl;
+}
