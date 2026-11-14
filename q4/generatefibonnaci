@@ -19,6 +19,10 @@ int main() {
         cout << "N must be 1 or greater" << endl;
         return 0;
     }
-    
+       cout << "Fibonacci series: ";
+    for (int i = 1; i <= n; i++)
+        cout << fib(i) << " ";
+    cout << endl;
 
-}
+    return 0;
+} 
