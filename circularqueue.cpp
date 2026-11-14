@@ -44,3 +44,12 @@ void display() {
     }
     cout << endl;
 }
+int main() {
+    enqueue(40); enqueue(20); enqueue(30); enqueue(40); enqueue(50);
+    enqueue(28);                // overflow
+    display();
+    dequeue(); dequeue();
+    enqueue(28); enqueue(79);   // reuses freed slots
+    display();
+    return 0;
+}
