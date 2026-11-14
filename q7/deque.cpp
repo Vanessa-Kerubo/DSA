@@ -60,3 +60,16 @@ void deleteFront() {
     else
         front++;
 }
+void deleteRear() {
+    if (isEmpty()) {
+        cout << "Underflow: deque is empty" << endl;
+        return;
+    }
+    cout << deque[rear] << " deleted from rear" << endl;
+    if (front == rear)           // only one element
+        front = rear = -1;
+    else if (rear == 0)          // wrap around
+        rear = SIZE - 1;
+    else
+        rear--;
+}
