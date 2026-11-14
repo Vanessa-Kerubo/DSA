@@ -73,3 +73,28 @@ void deleteRear() {
     else
         rear--;
 }
+void display() {
+    if (isEmpty()) {
+        cout << "Deque is empty" << endl;
+        return;
+    }
+    cout << "Deque: ";
+    int i = front;
+    while (true) {
+        cout << deque[i] << " ";
+        if (i == rear) break;
+        i = (i + 1) % SIZE;
+    }
+    cout << endl;
+}
+int main() {
+    insertRear(10);
+    insertRear(20);
+    insertFront(5);
+    insertFront(1);
+    display();          // 1 5 10 20
+    deleteFront();
+    deleteRear();
+    display();          // 5 10
+    return 0;
+}
