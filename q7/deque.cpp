@@ -33,3 +33,17 @@ void insertFront(int x) {
     deque[front] = x;
     cout << x << " inserted at front" << endl;
 }
+void insertRear(int x) {
+    if (isFull()) {
+        cout << "Overflow: deque is full" << endl;
+        return;
+    }
+    if (isEmpty())
+        front = rear = 0;
+    else if (rear == SIZE - 1)   // wrap around
+        rear = 0;
+    else
+        rear++;
+    deque[rear] = x;
+    cout << x << " inserted at rear" << endl;
+}
