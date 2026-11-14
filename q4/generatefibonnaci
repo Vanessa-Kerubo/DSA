@@ -19,5 +19,6 @@ int main() {
         cout << "N must be 1 or greater" << endl;
         return 0;
     }
+    
 
 }
