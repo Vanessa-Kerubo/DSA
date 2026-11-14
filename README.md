@@ -18,7 +18,7 @@ All programming questions in this task (Questions 1, 4, 5, 6 and 7) are implemen
 | 4d | N terms of the Fibonacci series (recursive) | C++ | `q4d_fibonacci_series.cpp` |
 | 5 | Enqueue and dequeue in a queue | C++ | `q5_queue.cpp` |
 | 6 | Sparse matrix using arrays (triplet form) | C++ | `q6_sparse_matrix.cpp` |
-| 7 | Double-ended queue operations | C++ | `q7_deque.cpp` |
+| 7 | Double-ended queue operations | C | `q7_deque.cpp` |
 | 8 | Priority queue and its types | Written | – |
 
 ## How to compile and run
