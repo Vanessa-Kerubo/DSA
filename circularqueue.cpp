@@ -19,3 +19,14 @@ void enqueue(int value) {
     q[rear] = value;
     cout << "Enqueued: " << value << endl;
 }
+void dequeue() {
+    if (isEmpty()) {
+        cout << "Queue Underflow" << endl;
+        return;
+    }
+    cout << q[front] << " deleted" << endl;
+    if (front == rear)            // last element removed
+        front = rear = -1;
+    else
+        front = (front + 1) % MAX;
+}
