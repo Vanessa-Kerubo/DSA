@@ -40,3 +40,28 @@ void display() {
         cout << queue[i] << " ";
     cout << endl;
 }
+int main() {
+    int choice, item;
+    while (true) {
+        cout << "\n1. Enqueue\n2. Dequeue\n3. Display\n4. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+        switch (choice) {
+            case 1:
+                cout << "Enter the value: ";
+                cin >> item;
+                enqueue(item);
+                break;
+            case 2:
+                dequeue();
+                break;
+            case 3:
+                display();
+                break;
+            case 4:
+                return 0;
+            default:
+                cout << "Invalid choice" << endl;
+        }
+    }
+}
